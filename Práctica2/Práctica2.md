@@ -40,7 +40,7 @@ Para solucionar este problema vamos a crear una conexión *'ssh'* entre las 2 m�
 Una vez creada la clave realizaremos una copia de esta a la máquina remota con el uso del comando *"ssh-copy-id
 ipmaquina"*.
 
-![imagen](https://github.com/FernandoCP/SWAP/blob/master/Práctica2/img/ADDKEY.png)
+![imagen](https://github.com/FernandoCP/SWAP/blob/master/Práctica2/img/ADDEDKEY.png)
 
 Una vez hecho esto ya podremos conectarnos sin contraseña a la otra máquina.
 
