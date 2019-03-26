@@ -1,7 +1,7 @@
 # Práctica 1: Preparación de los materiales
 ## Fernando Calvillo Parejo
 
-**Los objetivos en esta practica eran principalmente 3:** 
+**Los objetivos en esta práctica eran principalmente 3:** 
 
 **- El primero era la correcta instalacion de ambas maquinas y del LAMP.**
 
