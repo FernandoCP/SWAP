@@ -1,11 +1,13 @@
 # Práctica 1
 ## Fernando Calvillo Parejo
 
-**Los objetivos en esta practica eran principalmente 2:** 
+**Los objetivos en esta practica eran principalmente 3:** 
 
 **- El primero era la correcta instalacion de ambas maquinas y del LAMP.**
 
-**- El segundo era conseguir la conectividad entre ambas maquinas tanto por curl, como por ssh.**
+**- El segundo era la correcta configuración de la red de las máquinas.**
+
+**- El tercero era conseguir la conectividad entre ambas maquinas tanto por curl, como por ssh.**
 
 Siguiendo el tutorial he instalado 2 máquinas virtuales llamadas swap1 y swap2, respectivamente, con ubuntu server con una instalación por defecto. En la misma instalación instalamos LAMP y, posteriormente, ssh y curl.
 
@@ -44,3 +46,7 @@ Y con el comando *ping + IPdelaotramáquina"* podemos comprobar que nuestras má
 Una vez llegado a aquí queremos acceder de una maquina a otra a través de *curl*. Para ello creamos un documento html en "/var/www/html/" y desde la otra máquina con el comando *"curl http://direccionIPdelservidor/documento.html"*
 
 ![imagen4](https://github.com/FernandoCP/SWAP/blob/master/Práctica1/imagenes/curl.png)
+
+Por último, realizamos la conexión a través de *ssh*. Para ello solo escribimos el comando *"ssh + direccionIPdelaotramáquina"*, nos pedirá la contraseña de la otra máquina y una vez puesta estaremos conectados. Para saber si la conexión funciona puedes realizar una prueba sencilla como crear una carpeta o documento y comprobar en la otra maquina si se ha creado como podemos ver en la siguiente imagen.
+
+![imagen5](https://github.com/FernandoCP/SWAP/blob/master/Práctica1/imagenes/SSH.png)
