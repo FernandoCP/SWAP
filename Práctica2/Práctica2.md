@@ -46,3 +46,18 @@ Una vez hecho esto ya podremos conectarnos sin contraseña a la otra máquina.
 
 ![imagen](https://github.com/FernandoCP/SWAP/blob/master/Práctica2/img/PruebaSSH.png)
 
+### Establecer tareas en cron.
+
+Finalmente, vamos a programar una tarea en cron que se ejecute cada hora para mantener actualizado el contenido del directorio /var/www entre las dos máquinas. Para ello debemos ir al archivo *"etc/crontab"* y modificarlo añadiendo la siguiente sentiencia:
+
+*"0 * * * * root rsync -avz -e. ssh ipmaquina:/var/www /var/www"*
+
+En ella se indica con los primeros parámetros cada cuanto se va a realizar y quien, después se le añade la orden que en este caso es la misma que hemos utilizado en el primer apartado de la práctica.
+
+![imagen](https://github.com/FernandoCP/SWAP/blob/master/Práctica2/img/Crontab.png)
+
+Por último, reiniciamos el servicio de cron con la modificación.
+
+![imagen](https://github.com/FernandoCP/SWAP/blob/master/Práctica2/img/RestartCron.png)
+
+
