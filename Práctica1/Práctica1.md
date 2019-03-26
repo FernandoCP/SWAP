@@ -1,4 +1,4 @@
-# Práctica 1
+# Práctica 1: Preparación de los materiales
 ## Fernando Calvillo Parejo
 
 **Los objetivos en esta practica eran principalmente 3:** 
