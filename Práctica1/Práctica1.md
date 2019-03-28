@@ -23,7 +23,7 @@ auto enp0s8
 
 iface enp0s8 inet static
 
-addres 192.168.1.100 <--- AÑADIMOS LA IP QUE QUERAMOS.
+address 192.168.1.100 <--- AÑADIMOS LA IP QUE QUERAMOS.
 
 gateway 192.168.1.1
 
