@@ -1,5 +1,20 @@
-# Práctica 1: Preparación de los materiales
+# Práctica 3: Balanceo de carga
 ## Fernando Calvillo Parejo
+
+## Índice
+
+0. ### [Objetivos](#0)
+1. ### [Configuración e instalación de nginx como balanceador de carga](#1)
+2. ### [Configuración e instalación de haproxy como balanceador de carga](#2)
+3. ### [Prueba de granja web en alta carga (generada con la herramienta Apache
+Benchmark)](#3)
+4. ### [Instalación haproxy](#id4)
+5. ### [Configuración haproxy como balanceador](#id5)
+6. ### [Comprobación funcionamiento](#id6)
+7. ### [Ejemplo de balanceo con alta carga](#id7)
+
+
+<div id='id1' />
 
 **Los objetivos en esta práctica eran principalmente 3:** 
 
