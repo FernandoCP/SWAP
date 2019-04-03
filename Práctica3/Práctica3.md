@@ -138,7 +138,7 @@ Y para apreciar como afectan las peticiones a las maquinas, tanto el balanceador
  ![imagen11](https://github.com/FernandoCP/SWAP/blob/master/Práctica3/imagenes/BenchSWAP2HP.png)
   
   Nuevamente podemos observar en la primera imagen como el balanceador esta ejecutando HAProxy con un 92% de la CPU y en la segunda las multiples llamadas a apache en uno de los servidores.
-  
+   y com
   
   
   
