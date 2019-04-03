@@ -21,8 +21,9 @@
 En esta práctica vamos a configurar una red con varias máquinas en la que contaremos con un balanceador que reparta la carga entre 2 servidores finales. Para ello vamos a usar las 2 máquinas de las anteriores prácticas como servidores finales y ademas crearemos 3 máquinas más. 2 de esas nuevas máquinas las usaremos como blanceadores de carga entre los servidores finales, en una vamos a instalar y configurar la herramienta Nginx y en la segunda usaremos una alternativa a Nginx y en ella instalaremos y configuraremos HAproxy. Finalmente usaremos una última máquina para hacer un gran número de peticiones al balanceador y para ello usaremos la herramienta Benchmark Apache.
 
 <div id='1' />
-## 1. Nginx
 
+## 1. Nginx
+    + #### Configuración e instalación de nginx
 
 
 Siguiendo el tutorial he instalado 2 máquinas virtuales llamadas swap1 y swap2, respectivamente, con ubuntu server con una instalación por defecto. En la misma instalación instalamos LAMP y, posteriormente, ssh y curl.
