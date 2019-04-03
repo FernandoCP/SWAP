@@ -26,11 +26,15 @@ En esta práctica vamos a configurar una red con varias máquinas en la que cont
 
 <div id='11' />
 
- #### -Configuración e instalación de nginx
+ #### - Configuración e instalación de nginx
+ 
+ En primer lugar crearemos una nueva máquina virtual, en mi caso he clonado una de las anteriores. Como esta máquina va a ser usada como balanceador de carga no podemos tener ningún software se apropie del puerto 80 para poder recibir peticiones HTTP desde fuera de la granja web. En nuestro caso al ser una máquina clonada tenemos instalado Apache2 de modo que lo desintalaremos con el comando siguiente:                        
+       
+    sudo apt purge apache2
 
 <div id='12' />
 
- #### -Prueba de balanceo con Nginx
+ #### - Prueba de balanceo con Nginx
  
  
 <div id='2' />
@@ -39,11 +43,11 @@ En esta práctica vamos a configurar una red con varias máquinas en la que cont
 
 <div id='21' />
 
- #### -Configuración e instalación de HAProxy
+ #### - Configuración e instalación de HAProxy
  
  <div id='22' />
  
- #### -Prueba de balanceo con HAProxy
+ #### - Prueba de balanceo con HAProxy
 
 
 <div id='3' />
