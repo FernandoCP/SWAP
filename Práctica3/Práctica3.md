@@ -44,8 +44,7 @@ Una vez hecho esto procederemos a instalar Nginx y unicamente tendremos que ejec
 
  #### Configuración de Nginx
  
- Ahora que ya tenemos instalado Nginx lo siguiente es configurarlo para definir balanceos por round-robin, es decir, alternando las peticiones entre los diferentes servidores. Para ello, lo primero que vamos a hacer es modificar el fichero de
-configuración */etc/nginx/conf.d/default.conf* de la siguiente manera:
+ Ahora que ya tenemos instalado Nginx lo siguiente es configurarlo para definir balanceos por *round-robin*, es decir, alternando las peticiones entre los diferentes servidores. Para ello, lo primero que vamos a hacer es modificar el fichero de configuración */etc/nginx/conf.d/default.conf* de la siguiente manera:
 
 ![imagen1](https://github.com/FernandoCP/SWAP/blob/master/Práctica3/imagenes/nginxdefaultconf.png)
 
@@ -70,7 +69,7 @@ Una vez hecho esto vamos a ejecutar siguiente comando para ver que ocurre:
     curl http://192.168.1.150
 Y el resultado es el siguiente:
 
-![imagen3](https://github.com/FernandoCP/SWAP/blob/master/Práctica3/imagenes/BalanceoNGINX.png)
+![imagen4](https://github.com/FernandoCP/SWAP/blob/master/Práctica3/imagenes/BalanceoNGINX.png)
 
 Como podemos ver realiza bien el balanceo y manda las peticiones de forma alternativa a los 2 servidores.
 <div id='2' />
@@ -87,12 +86,26 @@ Como podemos ver realiza bien el balanceo y manda las peticiones de forma altern
  <div id='22' />
 
  #### Configuración de HAProxy
- 
+ Al igual que en la [configuracion de Nginx](#12) vamos a configurar HAProxy para definir balanceos alternando las peticiones entre los diferentes servidores usando el algoritmo *round-robin*.
+Lo único que debemos hacer es modificar el archivo /etc/haproxy/haproxy.cfg que tendrá este aspecto:
+
+![imagen5](https://github.com/FernandoCP/SWAP/blob/master/Práctica3/imagenes/HaproxyconfOLD.png)
+Y deberemos dejarlo de la siguiente manera:
+
+![imagen6](https://github.com/FernandoCP/SWAP/blob/master/Práctica3/imagenes/HPconfNEW.png)
+
+Finalmente para lanzar el servicio HAProxy ejecutaremos el siguiente comando.
+
+    sudo /usr/sbin/haproxy -f /etc/haproxy/haproxy.cfg
  <div id='23' />
  
  #### Prueba de balanceo con HAProxy
 
-
+ Para hacer la prueba de balanceo procederemos de la [misma manera que hicimos con Nginx](#13) usando la herramienta *curl* a la IP del balanceador que en este caso tiene la misma que el balanceador de Nginx *192.168.1.150*.
+ 
+    curl http://192.168.1.150
+ 
+![imagen7](https://github.com/FernandoCP/SWAP/blob/master/Práctica3/imagenes/BalanceoHP.png)
 <div id='3' />
 
 ## 3. Prueba de la granja con alta carga
