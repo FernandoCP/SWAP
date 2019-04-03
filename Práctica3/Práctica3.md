@@ -5,11 +5,13 @@
 
 0. ### [Objetivos](#0)
 1. ### [Nginx](#1)
-    + #### [Configuración e instalación de nginx](#11)
-    + #### [Prueba de balanceo con Nginx](#12)
+    + #### [Instalación de Nginx](#11)
+    + #### [Configuración de Nginx](#12)
+    + #### [Prueba de balanceo con Nginx](#13)
 2. ### [HAProxy](#2)
-    + #### [Configuración e instalación de HAProxy](#21)
-    + #### [Prueba de balanceo con HAProxy](#22)
+    + #### [Instalación de HAProxy](#21)
+    + #### [Configuración de HAProxy](#22)
+    + #### [Prueba de balanceo con HAProxy](#23)
 3. ### [Prueba de la granja con alta carga](#3)
 
 
@@ -26,7 +28,7 @@ En esta práctica vamos a configurar una red con varias máquinas en la que cont
 
 <div id='11' />
 
- #### - Configuración e instalación de nginx
+ #### Instalación de Nginx
  
  En primer lugar crearemos una nueva máquina virtual, en mi caso he clonado una de las anteriores. Como esta máquina va a ser usada como balanceador de carga no podemos tener ningún software se apropie del puerto 80 para poder recibir peticiones HTTP desde fuera de la granja web. En nuestro caso al ser una máquina clonada tenemos instalado Apache2 de modo que lo desintalaremos con el comando siguiente:                        
        
@@ -40,7 +42,9 @@ Y por último para iniciar el servicio:
     sudo systemctl start nginx
 <div id='12' />
 
- #### - Prueba de balanceo con Nginx
+ #### Configuración de Nginx
+ <div id='13' />
+ #### Prueba de balanceo con Nginx
  
  
 <div id='2' />
@@ -49,11 +53,15 @@ Y por último para iniciar el servicio:
 
 <div id='21' />
 
- #### - Configuración e instalación de HAProxy
+ #### Instalación de HAProxy
  
  <div id='22' />
+
+ #### Configuración de HAProxy
  
- #### - Prueba de balanceo con HAProxy
+ <div id='23' />
+ 
+ #### Prueba de balanceo con HAProxy
 
 
 <div id='3' />
