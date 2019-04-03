@@ -3,19 +3,16 @@
 
 ## Índice
 
-0. ### [Objetivos](#0)
-1. ### [Configuración e instalación de nginx como balanceador de carga](#1)
-2. ### [Configuración e instalación de haproxy como balanceador de carga](#2)
-3. ### [Prueba de granja web en alta carga (generada con la herramienta Apache
-Benchmark)](#3)
-
-4. ### [Instalación haproxy](#id4)
-5. ### [Configuración haproxy como balanceador](#id5)
-6. ### [Comprobación funcionamiento](#id6)
-7. ### [Ejemplo de balanceo con alta carga](#id7)
+### 0.-[Objetivos](#0)
+### 1.[-Configuración e instalación de nginx](#1)
+### 2.-[Prueba de balanceo con Nginx](#2)
+### 3.-[Configuración e instalación de haproxy](#3)
+### 4.-[Prueba de balanceo con HAProxy](#4)
+### 5.-[Prueba de la granja con alta carga](#5)
 
 
-<div id='id1' />
+
+<div id='0' />
 
 **Los objetivos en esta práctica eran principalmente 3:** 
 
