@@ -125,7 +125,7 @@ Y para apreciar como afectan las peticiones a las maquinas, tanto el balanceador
   Primero realizaremos la prueba con el balancedor que usa la herramienta Nginx y estos son los resultados:
  
  ![imagen8](https://github.com/FernandoCP/SWAP/blob/master/Práctica3/imagenes/nginxBenchmark.png)
- ![imagen9](https://github.com/FernandoCP/SWAP/blob/master/Práctica3/imagenes/nginxbenchmark2.png)
+ ![imagen9](https://github.com/FernandoCP/SWAP/blob/master/Práctica3/imagenes/nginxbenchamrk2.png)
  
  En la primera imagen podemos observar como el balanceador esta ejecutando Nginx con un 95% de la CPU y en la segunda las multiples llamadas a apache en uno de los servidores.
   <div id='32' />
@@ -135,7 +135,7 @@ Y para apreciar como afectan las peticiones a las maquinas, tanto el balanceador
   De la misma manera haremos la misma prueba utilizando el balanceador que usa la herramienta HAProxy y los resultados son los siguientes:
   
  ![imagen10](https://github.com/FernandoCP/SWAP/blob/master/Práctica3/imagenes/BenchmarkHP.png)
- ![imagen11](https://github.com/FernandoCP/SWAP/blob/master/Práctica3/imagenes/benchSWAP2.png)
+ ![imagen11](https://github.com/FernandoCP/SWAP/blob/master/Práctica3/imagenes/BenchSWAP2HP.png)
   
   Nuevamente podemos observar en la primera imagen como el balanceador esta ejecutando HAProxy con un 92% de la CPU y en la segunda las multiples llamadas a apache en uno de los servidores.
   
