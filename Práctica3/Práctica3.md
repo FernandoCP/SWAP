@@ -60,9 +60,17 @@ Y por último para iniciar el servicio haremos lo siguiente:
 Con esta configuración hemos usado balanceo mediante el algoritmo de “round-robin” con la misma prioridad para todos los servidores. Para probarlo vamos a realizar peticiones con *curl* a la IP del balanceador que es *192.168.1.150* y, si todo es correcto, nos mostrara el archivo *index.html* de ambos servidores de forma alternativa. 
 Pero antes vamos a realizar un cambio en los archivos *index.html* de los servidores para que se pueda ver facilmente. En mi caso, he hecho las siguientes modificaciones: 
 
-![imagen1](https://github.com/FernandoCP/SWAP/blob/master/Práctica3/imagenes/IndexSWAP1.png)
-![imagen1](https://github.com/FernandoCP/SWAP/blob/master/Práctica3/imagenes/indexSWAP2.png)
+![imagen2](https://github.com/FernandoCP/SWAP/blob/master/Práctica3/imagenes/IndexSWAP1.png)
+![imagen3](https://github.com/FernandoCP/SWAP/blob/master/Práctica3/imagenes/indexSWAP2.png)
 
+Una vez hecho esto vamos a ejecutar siguiente comando para ver que ocurre:
+
+    curl http://192.168.1.150
+Y el resultado es el siguiente:
+
+![imagen3](https://github.com/FernandoCP/SWAP/blob/master/Práctica3/imagenes/BalanceoNGINX.png)
+
+Como podemos ver realiza bien el balanceo y manda las peticiones de forma alternativa a los 2 servidores.
 <div id='2' />
 
 ## 2. HAProxy
