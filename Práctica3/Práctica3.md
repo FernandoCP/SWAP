@@ -5,8 +5,11 @@
 
 0. ### [Objetivos](#0)
 1. ### [Nginx](#1)
+
 1.1 ### [Configuración e instalación de nginx](#11)
+
 1.2 ### [Prueba de balanceo con Nginx](#12)
+
 2. ### [HAproxy](#2)
 2.1 ### [Configuración e instalación de haproxy](#21)
 2.2 ### [Prueba de balanceo con HAProxy](#22)
