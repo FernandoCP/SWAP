@@ -26,11 +26,11 @@ En esta práctica vamos a configurar una red con varias máquinas en la que cont
 
 <div id='11' />
 
- #### Configuración e instalación de nginx
+ #### -Configuración e instalación de nginx
 
 <div id='12' />
 
- #### Prueba de balanceo con Nginx
+ #### -Prueba de balanceo con Nginx
  
  
 <div id='2' />
@@ -39,11 +39,11 @@ En esta práctica vamos a configurar una red con varias máquinas en la que cont
 
 <div id='21' />
 
- #### Configuración e instalación de HAProxy
+ #### -Configuración e instalación de HAProxy
  
  <div id='22' />
  
- #### Prueba de balanceo con HAProxy
+ #### -Prueba de balanceo con HAProxy
 
 
 <div id='3' />
