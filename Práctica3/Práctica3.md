@@ -31,7 +31,13 @@ En esta práctica vamos a configurar una red con varias máquinas en la que cont
  En primer lugar crearemos una nueva máquina virtual, en mi caso he clonado una de las anteriores. Como esta máquina va a ser usada como balanceador de carga no podemos tener ningún software se apropie del puerto 80 para poder recibir peticiones HTTP desde fuera de la granja web. En nuestro caso al ser una máquina clonada tenemos instalado Apache2 de modo que lo desintalaremos con el comando siguiente:                        
        
     sudo apt purge apache2
+Una vez hecho esto procedermos a instalar Nginx y unicamente tendremos que ejecutar los siguientes comandos:
 
+    sudo apt-get update && sudo apt-get dist-upgrade && sudo apt-get autoremove
+    sudo apt-get install nginx
+Y por último para iniciar el servicio:
+
+    sudo systemctl start nginx
 <div id='12' />
 
  #### - Prueba de balanceo con Nginx
