@@ -8,6 +8,7 @@
 2. ### [Configuración e instalación de haproxy como balanceador de carga](#2)
 3. ### [Prueba de granja web en alta carga (generada con la herramienta Apache
 Benchmark)](#3)
+
 4. ### [Instalación haproxy](#id4)
 5. ### [Configuración haproxy como balanceador](#id5)
 6. ### [Comprobación funcionamiento](#id6)
