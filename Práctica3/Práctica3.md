@@ -89,7 +89,7 @@ Como podemos ver realiza bien el balanceo y manda las peticiones de forma altern
  Al igual que en la [configuracion de Nginx](#12) vamos a configurar HAProxy para definir balanceos alternando las peticiones entre los diferentes servidores usando el algoritmo *round-robin*.
 Lo único que debemos hacer es modificar el archivo /etc/haproxy/haproxy.cfg que tendrá este aspecto:
 
-![imagen5](https://github.com/FernandoCP/SWAP/blob/master/Práctica3/imagenes/HaproxyconfOLD.png)
+![imagen5](https://github.com/FernandoCP/SWAP/blob/master/Práctica3/imagenes/HaproxyConfOLD.png)
 Y deberemos dejarlo de la siguiente manera:
 
 ![imagen6](https://github.com/FernandoCP/SWAP/blob/master/Práctica3/imagenes/HPconfNEW.png)
@@ -110,10 +110,21 @@ Finalmente para lanzar el servicio HAProxy ejecutaremos el siguiente comando.
 
 ## 3. Prueba de la granja con alta carga
 
+ Finalmente, vamos a probar nuestra granja web con una alta carga de peticiones. Para ello vamos a hacer uso de una nueva máquina y de la herramienta Apache Benchmark (ab) que viene instalada junto a apache. De esta forma unicamente tendremos que ejecutar la siguiente orden:
+
+    ab -n 1000 -c 10 http://192.168.2.121/index.html
+Los parámetros indicados en la orden anterior le indican al benchmark que solicite la página con dirección http://192.168.2.121/index.html 1000 veces (-n 1000 indica el número de peticiones) y hacer esas peticiones concurrentemente de 10 en 10 (-c 10 indica el nivel de concurrencia).
+
+Y para apreciar como afectan las peticiones a las maquinas, tanto el balanceador como los servidores, ejercutaremos la orden: 
+
+    top
  <div id='31' />
  
  #### Prueba con Nginx como balanceador
+ Primero realizaremos la prueba con el balancedar que usa la herramienta Nginx y estos son los resultados:
  
+ ![imagen8](https://github.com/FernandoCP/SWAP/blob/master/Práctica3/imagenes/nginxBenchmark.png)
+ ![imagen9](https://github.com/FernandoCP/SWAP/blob/master/Práctica3/imagenes/nginxBenchmark2.png)
   <div id='32' />
  
  #### Prueba con HAProxy como balanceador
