@@ -79,6 +79,9 @@ Como podemos ver realiza bien el balanceo y manda las peticiones de forma altern
 
  #### Instalación de HAProxy
  
+ Una vez creada la máquina y preparada de la misma manera que cuando [instalamos Nginx](#11) unicamente tendremos que ejecutar la siguiente orden:
+ 
+    sudo apt-get install haproxy
  <div id='22' />
 
  #### Configuración de HAProxy
