@@ -43,7 +43,15 @@ Y por último para iniciar el servicio:
 <div id='12' />
 
  #### Configuración de Nginx
+ 
+ Ahora que ya tenemos instalado Nginx lo siguiente es configurarlo para definir balanceos por round-robin, es decir, alternando las peticiones entre los diferentes servidores. Para ello, lo primero que vamos a hacer es modificar el fichero de
+configuración */etc/nginx/conf.d/default.conf* de la siguiente manera:
+(En mi caso no existía el archivo asi que lo cree).
+
+![imagen1](https://github.com/FernandoCP/SWAP/blob/master/Práctica3/imagenes/nginxdefaultconf.png)
+
  <div id='13' />
+ 
  #### Prueba de balanceo con Nginx
  
  
