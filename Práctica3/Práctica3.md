@@ -13,6 +13,8 @@
     + #### [Configuración de HAProxy](#22)
     + #### [Prueba de balanceo con HAProxy](#23)
 3. ### [Prueba de la granja con alta carga](#3)
+    + #### [Prueba con Nginx como balanceador](#31)
+    + #### [Prueba con HAProxy como balanceador](#32)
 
 
 
@@ -95,3 +97,10 @@ Como podemos ver realiza bien el balanceo y manda las peticiones de forma altern
 
 ## 3. Prueba de la granja con alta carga
 
+ <div id='31' />
+ 
+ #### Prueba con Nginx como balanceador
+ 
+  <div id='32' />
+ 
+ #### Prueba con HAProxy como balanceador
