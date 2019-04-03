@@ -7,8 +7,8 @@
 1. ### [Nginx](#1)
     + #### [Configuración e instalación de nginx](#11)
     + #### [Prueba de balanceo con Nginx](#12)
-2. ### [HAproxy](#2)
-    + #### [Configuración e instalación de haproxy](#21)
+2. ### [HAProxy](#2)
+    + #### [Configuración e instalación de HAProxy](#21)
     + #### [Prueba de balanceo con HAProxy](#22)
 3. ### [Prueba de la granja con alta carga](#3)
 
@@ -18,52 +18,33 @@
 
 ## 0. Objetivos
 
-En esta práctica vamos a configurar una red con varias máquinas en la que contaremos con un balanceador que reparta la carga entre 2 servidores finales. Para ello vamos a usar las 2 máquinas de las anteriores prácticas como servidores finales y ademas crearemos 3 máquinas más. 2 de esas nuevas máquinas las usaremos como blanceadores de carga entre los servidores finales, en una vamos a instalar y configurar la herramienta Nginx y en la segunda usaremos una alternativa a Nginx y en ella instalaremos y configuraremos HAproxy. Finalmente usaremos una última máquina para hacer un gran número de peticiones al balanceador y para ello usaremos la herramienta Benchmark Apache.
+En esta práctica vamos a configurar una red con varias máquinas en la que contaremos con un balanceador que reparta la carga entre 2 servidores finales. Para ello vamos a usar las 2 máquinas de las anteriores prácticas como servidores finales y ademas crearemos 3 máquinas más. 2 de esas nuevas máquinas las usaremos como blanceadores de carga entre los servidores finales, en una vamos a instalar y configurar la herramienta Nginx y en la segunda usaremos una alternativa a Nginx y en ella instalaremos y configuraremos HAProxy. Finalmente usaremos una última máquina para hacer un gran número de peticiones al balanceador y para ello usaremos la herramienta Benchmark Apache.
 
 <div id='1' />
 
 ## 1. Nginx
+
+<div id='11' />
+
  #### Configuración e instalación de nginx
 
+<div id='12' />
+ #### Prueba de balanceo con Nginx
+ 
+ 
+<div id='2' />
+## 2. HAProxy
 
-Siguiendo el tutorial he instalado 2 máquinas virtuales llamadas swap1 y swap2, respectivamente, con ubuntu server con una instalación por defecto. En la misma instalación instalamos LAMP y, posteriormente, ssh y curl.
+<div id='21' />
+ #### Configuración e instalación de HAProxy
+ 
+ <div id='22' />
+ #### Prueba de balanceo con HAProxy
 
-Lo primero a realizar tras tener todo instalado es añadir un adaptador de red para la red interna en nuestras máquinas virtuales. 
 
-![imagen1](https://github.com/FernandoCP/SWAP/blob/master/Práctica1/imagenes/Red.png)
+<div id='3' />
 
-Tras esto, nos vamos al documento /etc/network/interfaces y añadimos lo siguiente: 
+## 3. Prueba de la granja con alta carga
 
-#The secondary network interfaces
+![imagen1](https://github.com/FernandoCP/SWAP/blob/master/Práctica3/imagenes/Red.png)
 
-auto enp0s8
-
-iface enp0s8 inet static
-
-address 192.168.1.100 <--- AÑADIMOS LA IP QUE QUERAMOS.
-
-gateway 192.168.1.1
-
-netmask 255.255.255.0
-
-network 192.168.1.0
-
-broadcast 192.168.1.255
-
-Una vez hecho esto, hacemos un restart de la red de la máquina con el siguiente comando *"systemctl restart networking.service"* y con esto ambas máquinas quedan conectadas. En mi caso el comando anterior no me sirvío y el que yo utilicé fue *"/etc/init.d/networking restart"*.
-
-Con el comando *ifconfig* podemos comprobar la información relativa a las interfaces de red como se muestra en la imagen.
-
-![imagen2](https://github.com/FernandoCP/SWAP/blob/master/Práctica1/imagenes/ifconfig.png)
-
-Y con el comando *ping + IPdelaotramáquina"* podemos comprobar que nuestras máquinas estan conectadas entre si.
-
-![imagen3](https://github.com/FernandoCP/SWAP/blob/master/Práctica1/imagenes/conectadas.png)
-
-Una vez llegado a aquí queremos acceder de una maquina a otra a través de *curl*. Para ello creamos un documento html en "/var/www/html/" y desde la otra máquina con el comando *"curl http://direccionIPdelservidor/documento.html"*
-
-![imagen4](https://github.com/FernandoCP/SWAP/blob/master/Práctica1/imagenes/curl.png)
-
-Por último, realizamos la conexión a través de *ssh*. Para ello solo escribimos el comando *"ssh + direccionIPdelaotramáquina"*, nos pedirá la contraseña de la otra máquina y una vez puesta estaremos conectados. Para saber si la conexión funciona puedes realizar una prueba sencilla como crear una carpeta o documento y comprobar en la otra maquina si se ha creado como podemos ver en la siguiente imagen.
-
-![imagen5](https://github.com/FernandoCP/SWAP/blob/master/Práctica1/imagenes/SSH.png)
