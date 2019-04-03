@@ -46,6 +46,7 @@ Una vez hecho esto procederemos a instalar Nginx y unicamente tendremos que ejec
 configuración */etc/nginx/conf.d/default.conf* de la siguiente manera:
 
 ![imagen1](https://github.com/FernandoCP/SWAP/blob/master/Práctica3/imagenes/nginxdefaultconf.png)
+
 En mi caso no existía el archivo por tanto lo cree.
 
 Y por último para iniciar el servicio haremos lo siguiente:
@@ -56,9 +57,12 @@ Y por último para iniciar el servicio haremos lo siguiente:
  
  #### Prueba de balanceo con Nginx
  
- 
-En este ejemplo hemos usado balanceo mediante el algoritmo de “round-robin” con la
-misma prioridad para todos los servidores.
+Con esta configuración hemos usado balanceo mediante el algoritmo de “round-robin” con la misma prioridad para todos los servidores. Para probarlo vamos a realizar peticiones con *curl* a la IP del balanceador que es *192.168.1.150* y, si todo es correcto, nos mostrara el archivo *index.html* de ambos servidores de forma alternativa. 
+Pero antes vamos a realizar un cambio en los archivos *index.html* de los servidores para que se pueda ver facilmente. En mi caso, he hecho las siguientes modificaciones: 
+
+![imagen1](https://github.com/FernandoCP/SWAP/blob/master/Práctica3/imagenes/IndexSWAP1.png)
+![imagen1](https://github.com/FernandoCP/SWAP/blob/master/Práctica3/imagenes/indexSWAP2.png)
+
 <div id='2' />
 
 ## 2. HAProxy
@@ -79,6 +83,4 @@ misma prioridad para todos los servidores.
 <div id='3' />
 
 ## 3. Prueba de la granja con alta carga
-
-![imagen1](https://github.com/FernandoCP/SWAP/blob/master/Práctica3/imagenes/Red.png)
 
