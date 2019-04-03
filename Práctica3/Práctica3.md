@@ -3,7 +3,7 @@
 
 ## Índice
 
-0.- ### [Objetivos](#0)
+0. ### [Objetivos](#0)
 1.- ### [-Configuración e instalación de nginx](#1)
 2.- ### [Prueba de balanceo con Nginx](#2)
 3.- ### [Configuración e instalación de haproxy](#3)
