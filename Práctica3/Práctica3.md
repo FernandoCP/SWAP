@@ -14,6 +14,8 @@
 
 <div id='0' />
 
+## 0.Objetivos
+
 **Los objetivos en esta práctica eran principalmente 3:** 
 
 **- El primero era la correcta instalacion de ambas maquinas y del LAMP.**
