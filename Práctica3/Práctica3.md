@@ -23,7 +23,7 @@ En esta práctica vamos a configurar una red con varias máquinas en la que cont
 <div id='1' />
 
 ## 1. Nginx
-   +#### Configuración e instalación de nginx
+ #### Configuración e instalación de nginx
 
 
 Siguiendo el tutorial he instalado 2 máquinas virtuales llamadas swap1 y swap2, respectivamente, con ubuntu server con una instalación por defecto. En la misma instalación instalamos LAMP y, posteriormente, ssh y curl.
