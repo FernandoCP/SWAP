@@ -1,28 +1,20 @@
-# Práctica 3: Balanceo de carga
+# Práctica 5: Replicación de bases de datos MySQL
 ## Fernando Calvillo Parejo
 
 ## Índice
 
 0. ### [Objetivos](#0)
-1. ### [Nginx](#1)
-    + #### [Instalación de Nginx](#11)
-    + #### [Configuración de Nginx](#12)
-    + #### [Prueba de balanceo con Nginx](#13)
-2. ### [HAProxy](#2)
-    + #### [Instalación de HAProxy](#21)
-    + #### [Configuración de HAProxy](#22)
-    + #### [Prueba de balanceo con HAProxy](#23)
-3. ### [Prueba de la granja con alta carga](#3)
-    + #### [Prueba con Nginx como balanceador](#31)
-    + #### [Prueba con HAProxy como balanceador](#32)
-
-
+1. ### [Crear una BD e insertar datos](#1)
+2. ### [Replicar una BD MySQL con mysqldump](#2)
+3. ### [Replicación de BD mediante una configuración
+maestro-esclavo](#3)
 
 <div id='0' />
 
 ## 0. Objetivos
 
-En esta práctica vamos a configurar una red con varias máquinas en la que contaremos con un balanceador que reparta la carga entre 2 servidores finales. Para ello vamos a usar las 2 máquinas de las anteriores prácticas como servidores finales y ademas crearemos 3 máquinas más. 2 de esas nuevas máquinas las usaremos como blanceadores de carga entre los servidores finales, en una vamos a instalar y configurar la herramienta Nginx y en la segunda usaremos una alternativa a Nginx y en ella instalaremos y configuraremos HAProxy. Finalmente usaremos una última máquina para hacer un gran número de peticiones al balanceador y para ello usaremos la herramienta Benchmark Apache.
+En esta práctica el objetivo es configurar las máquinas virtuales para trabajar de forma que se mantenga actualizada la información en una BD entre dos servidores.Para ello, crearemos una BD con al menos una tabla y algunos datos, realizaremos la copia de seguridad de la BD completa usando mysqldump en la máquina principal y copiar el archivo de copia de seguridad a la máquina secundaria, después restauraremos dicha copia de seguridad en la segunda máquina (clonado manual
+de la BD), de forma que en ambas máquinas esté esa BD de forma idéntica y finalmente, realizaremos la configuración maestro-esclavo de los servidores MySQL para que la replicación de datos se realice automáticamente.
 
 <div id='1' />
 
