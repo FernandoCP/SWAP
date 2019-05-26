@@ -27,39 +27,17 @@ Para esta práctica lo primero que haremos es crear una nueva base de datos y un
        
 En este caso hemos creado una base de datos y en ella una tabla "datos" con 2 columnas (nombre y telefono)
 
-## 2. HAProxy
+## 2. Replicar una BD MySQL con mysqldump
 
-<div id='21' />
+Tenemos varias formas de replicar una base de datos, en nuestro caso realizaremos una copia en frío.En este tipo de copias de seguridad deberemos volcar todos los registros al disco y una vez hecho esto podremos apagar la base de datos para copiarla y así evitar perder la información de las transacciones en curso. Este tipo de copias de seguridad son las más sencillas y las más seguras, aunque es necesario apagar la base de datos, cosa que no siempre es posible.
 
- #### Instalación de HAProxy
- 
- Una vez creada la máquina y preparada de la misma manera que cuando [instalamos Nginx](#11) unicamente tendremos que ejecutar la siguiente orden:
- 
-    sudo apt-get install haproxy
- <div id='22' />
+![imagen3](https://github.com/FernandoCP/SWAP/blob/master/Práctica5/imagenes/3.png)
+![imagen5](https://github.com/FernandoCP/SWAP/blob/master/Práctica5/imagenes/5.png)
 
- #### Configuración de HAProxy
- Al igual que en la [configuracion de Nginx](#12) vamos a configurar HAProxy para definir balanceos alternando las peticiones entre los diferentes servidores usando el algoritmo *round-robin*.
-Lo único que debemos hacer es modificar el archivo /etc/haproxy/haproxy.cfg que tendrá este aspecto:
+Antes de recuperar la BDD deberemos crear otra con el mismo nombre en la segunda máquina.
 
-![imagen5](https://github.com/FernandoCP/SWAP/blob/master/Práctica3/imagenes/HaproxyConfOLD.png)
-Y deberemos dejarlo de la siguiente manera:
 
-![imagen6](https://github.com/FernandoCP/SWAP/blob/master/Práctica3/imagenes/HPconfNEW.png)
-
-Finalmente para lanzar el servicio HAProxy ejecutaremos el siguiente comando.
-
-    sudo /usr/sbin/haproxy -f /etc/haproxy/haproxy.cfg
- <div id='23' />
- 
- #### Prueba de balanceo con HAProxy
-
- Para hacer la prueba de balanceo procederemos de la [misma manera que hicimos con Nginx](#13) usando la herramienta *curl* a la IP del balanceador que en este caso tiene la misma que el balanceador de Nginx *192.168.1.150*.
- 
-    curl http://192.168.1.150
- 
-![imagen7](https://github.com/FernandoCP/SWAP/blob/master/Práctica3/imagenes/BalanceoHP.png)
-<div id='3' />
+![imagen6](https://github.com/FernandoCP/SWAP/blob/master/Práctica5/imagenes/6.png)
 
 ## 3. Prueba de la granja con alta carga
 
