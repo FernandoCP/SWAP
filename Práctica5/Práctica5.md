@@ -24,51 +24,45 @@ Para esta práctica lo primero que haremos es crear una nueva base de datos y un
 ![imagen1](https://github.com/FernandoCP/SWAP/blob/master/Práctica5/imagenes/1.png)
 ![imagen2](https://github.com/FernandoCP/SWAP/blob/master/Práctica5/imagenes/2.png)
 ![imagen3](https://github.com/FernandoCP/SWAP/blob/master/Práctica5/imagenes/3.png)
-![imagen3](https://github.com/FernandoCP/SWAP/blob/master/Práctica5/imagenes/4.png)
+![imagen4](https://github.com/FernandoCP/SWAP/blob/master/Práctica5/imagenes/4.png)
        
 En este caso hemos creado una base de datos y en ella una tabla "datos" con 2 columnas (nombre y telefono)
 
 <div id='2' />
+
 ## 2. Replicar una BD MySQL con mysqldump
 
 Tenemos varias formas de replicar una base de datos, en nuestro caso realizaremos una copia en frío. En este tipo de copias de seguridad deberemos volcar todos los registros al disco y una vez hecho esto podremos apagar la base de datos para copiarla y así evitar perder la información de las transacciones en curso. Este tipo de copias de seguridad son las más sencillas y las más seguras, aunque es necesario apagar la base de datos, cosa que no siempre es posible.
 
 
-![imagen3](https://github.com/FernandoCP/SWAP/blob/master/Práctica5/imagenes/5.png)
-![imagen5](https://github.com/FernandoCP/SWAP/blob/master/Práctica5/imagenes/7.png)
+![imagen5](https://github.com/FernandoCP/SWAP/blob/master/Práctica5/imagenes/5.png)
+![imagen6](https://github.com/FernandoCP/SWAP/blob/master/Práctica5/imagenes/7.png)
 
 Antes de recuperar la BDD deberemos crear otra con el mismo nombre en la segunda máquina.
 
 
-![imagen6](https://github.com/FernandoCP/SWAP/blob/master/Práctica5/imagenes/8.png)
+![imagen7](https://github.com/FernandoCP/SWAP/blob/master/Práctica5/imagenes/8.png)
 
-## 3. Prueba de la granja con alta carga
+<div id='3' />
 
- Finalmente, vamos a probar nuestra granja web con una alta carga de peticiones. Para ello vamos a hacer uso de una nueva máquina y de la herramienta Apache Benchmark (ab) que viene instalada junto a apache. De esta forma unicamente tendremos que ejecutar la siguiente orden:
+## 3. Replicación de BD mediante una configuración maestro-esclavo
 
-    ab -n 1000 -c 10 http://192.168.2.121/index.html
-Los parámetros indicados en la orden anterior le indican al benchmark que solicite la página con dirección http://192.168.2.121/index.html 1000 veces (-n 1000 indica el número de peticiones) y hacer esas peticiones concurrentemente de 10 en 10 (-c 10 indica el nivel de concurrencia).
+Modificamos la configuración de MySQL en el maestro y el esclavo de forma que añadiremos las opciones para guardar el log y el bin, y para poder identificar el servidor.
 
-Y para apreciar como afectan las peticiones a las maquinas, tanto el balanceador como los servidores, ejercutaremos la orden: 
+![imagen8](https://github.com/FernandoCP/SWAP/blob/master/Práctica5/imagenes/9.png)
 
-    top
- <div id='31' />
- 
- #### Prueba con Nginx como balanceador
- 
-  Primero realizaremos la prueba con el balancedor que usa la herramienta Nginx y estos son los resultados:
- 
- ![imagen8](https://github.com/FernandoCP/SWAP/blob/master/Práctica3/imagenes/nginxBenchmark.png)
- ![imagen9](https://github.com/FernandoCP/SWAP/blob/master/Práctica3/imagenes/nginxbenchamrk2.png)
- 
- En la primera imagen podemos observar como el balanceador esta ejecutando Nginx con un 95% de la CPU y en la segunda las multiples llamadas a apache en uno de los servidores.
-  <div id='32' />
- 
- #### Prueba con HAProxy como balanceador
- 
-  De la misma manera haremos la misma prueba utilizando el balanceador que usa la herramienta HAProxy y los resultados son los siguientes:
-  
- ![imagen10](https://github.com/FernandoCP/SWAP/blob/master/Práctica3/imagenes/BenchmarkHP.png)
- ![imagen11](https://github.com/FernandoCP/SWAP/blob/master/Práctica3/imagenes/BenchSWAP2HP.png)
-  
-  Nuevamente podemos observar en la primera imagen como el balanceador esta ejecutando HAProxy con un 92% de la CPU y en la segunda las multiples llamadas a apache en uno de los servidores.
+Seguidamente, creamos al usuario encargado de la replicación de la BDD en el esclavo.
+
+![imagen9](https://github.com/FernandoCP/SWAP/blob/master/Práctica5/imagenes/10.png)
+
+Una vez que ya tenemos la máquina 1 como esclavo, establecemos la máquina 2 como maestro que es la que tiene que replicar la base de datos.
+
+![imagen10](https://github.com/FernandoCP/SWAP/blob/master/Práctica5/imagenes/11.png)
+
+Finalmente, si realizamos un insert en el maestro, al consultar la tabla en el esclavo veremos reflejado el cambio.
+
+![imagen11](https://github.com/FernandoCP/SWAP/blob/master/Práctica5/imagenes/13.png)
+
+
+
+
