@@ -61,7 +61,7 @@ Una vez que ya tenemos la máquina 1 como esclavo, establecemos la máquina 2 co
 
 Finalmente, si realizamos un insert en el maestro, al consultar la tabla en el esclavo veremos reflejado el cambio.
 
-![imagen11](https://github.com/FernandoCP/SWAP/blob/master/Práctica5/imagenes/12.png)
+![imagen11](https://github.com/FernandoCP/SWAP/blob/master/Práctica5/imagenes/prueba.PNG)
 
 
 
