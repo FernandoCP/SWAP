@@ -22,8 +22,8 @@ de la BD), de forma que en ambas máquinas esté esa BD de forma idéntica y fin
 Para esta práctica lo primero que haremos es crear una nueva base de datos y unas pocas tablas y registros..                 
 
 ![imagen1](https://github.com/FernandoCP/SWAP/blob/master/Práctica5/imagenes/1.png)
-![imagen1](https://github.com/FernandoCP/SWAP/blob/master/Práctica5/imagenes/2.png)
-![imagen1](https://github.com/FernandoCP/SWAP/blob/master/Práctica5/imagenes/3.png)
+![imagen2](https://github.com/FernandoCP/SWAP/blob/master/Práctica5/imagenes/2.png)
+![imagen3](https://github.com/FernandoCP/SWAP/blob/master/Práctica5/imagenes/3.png)
        
 En este caso hemos creado una base de datos y en ella una tabla "datos" con 2 columnas (nombre y telefono)
 
