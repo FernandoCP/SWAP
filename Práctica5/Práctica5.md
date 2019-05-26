@@ -17,53 +17,15 @@ de la BD), de forma que en ambas máquinas esté esa BD de forma idéntica y fin
 
 <div id='1' />
 
-## 1. Nginx
+## 1. Crear una BD e insertar datos
 
-<div id='11' />
+Para esta práctica lo primero que haremos es crear una nueva base de datos y unas pocas tablas y registros..                 
 
- #### Instalación de Nginx
- 
- En primer lugar crearemos una nueva máquina virtual, en mi caso he clonado una de las anteriores. Como esta máquina va a ser usada como balanceador de carga no podemos tener ningún software se apropie del puerto 80 para poder recibir peticiones HTTP desde fuera de la granja web. En nuestro caso al ser una máquina clonada tenemos instalado Apache2 de modo que lo desintalaremos con el comando siguiente:                        
+![imagen1](https://github.com/FernandoCP/SWAP/blob/master/Práctica5/imagenes/1.png)
+![imagen1](https://github.com/FernandoCP/SWAP/blob/master/Práctica5/imagenes/2.png)
+![imagen1](https://github.com/FernandoCP/SWAP/blob/master/Práctica5/imagenes/3.png)
        
-    sudo apt purge apache2
-Una vez hecho esto procederemos a instalar Nginx y unicamente tendremos que ejecutar los siguientes comandos:
-
-    sudo apt-get update && sudo apt-get dist-upgrade && sudo apt-get autoremove
-    sudo apt-get install nginx
-
-<div id='12' />
-
- #### Configuración de Nginx
- 
- Ahora que ya tenemos instalado Nginx lo siguiente es configurarlo para definir balanceos por *round-robin*, es decir, alternando las peticiones entre los diferentes servidores. Para ello, lo primero que vamos a hacer es modificar el fichero de configuración */etc/nginx/conf.d/default.conf* de la siguiente manera:
-
-![imagen1](https://github.com/FernandoCP/SWAP/blob/master/Práctica3/imagenes/nginxdefaultconf.png)
-
-En mi caso no existía el archivo por tanto lo cree.
-
-Y por último para iniciar el servicio haremos lo siguiente:
-
-    sudo systemctl start nginx
-
- <div id='13' />
- 
- #### Prueba de balanceo con Nginx
- 
-Con esta configuración hemos usado balanceo mediante el algoritmo de “round-robin” con la misma prioridad para todos los servidores. Para probarlo vamos a realizar peticiones con *curl* a la IP del balanceador que es *192.168.1.150* y, si todo es correcto, nos mostrara el archivo *index.html* de ambos servidores de forma alternativa. 
-Pero antes vamos a realizar un cambio en los archivos *index.html* de los servidores para que se pueda ver facilmente. En mi caso, he hecho las siguientes modificaciones: 
-
-![imagen2](https://github.com/FernandoCP/SWAP/blob/master/Práctica3/imagenes/IndexSWAP1.png)
-![imagen3](https://github.com/FernandoCP/SWAP/blob/master/Práctica3/imagenes/indexSWAP2.png)
-
-Una vez hecho esto vamos a ejecutar siguiente comando para ver que ocurre:
-
-    curl http://192.168.1.150
-Y el resultado es el siguiente:
-
-![imagen4](https://github.com/FernandoCP/SWAP/blob/master/Práctica3/imagenes/BalanceoNGINX.png)
-
-Como podemos ver realiza bien el balanceo y manda las peticiones de forma alternativa a los 2 servidores.
-<div id='2' />
+En este caso hemos creado una base de datos y en ella una tabla "datos" con 2 columnas (nombre y telefono)
 
 ## 2. HAProxy
 
