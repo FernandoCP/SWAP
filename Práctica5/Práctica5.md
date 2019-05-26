@@ -24,20 +24,23 @@ Para esta práctica lo primero que haremos es crear una nueva base de datos y un
 ![imagen1](https://github.com/FernandoCP/SWAP/blob/master/Práctica5/imagenes/1.png)
 ![imagen2](https://github.com/FernandoCP/SWAP/blob/master/Práctica5/imagenes/2.png)
 ![imagen3](https://github.com/FernandoCP/SWAP/blob/master/Práctica5/imagenes/3.png)
+![imagen3](https://github.com/FernandoCP/SWAP/blob/master/Práctica5/imagenes/4.png)
        
 En este caso hemos creado una base de datos y en ella una tabla "datos" con 2 columnas (nombre y telefono)
 
+<div id='2' />
 ## 2. Replicar una BD MySQL con mysqldump
 
-Tenemos varias formas de replicar una base de datos, en nuestro caso realizaremos una copia en frío.En este tipo de copias de seguridad deberemos volcar todos los registros al disco y una vez hecho esto podremos apagar la base de datos para copiarla y así evitar perder la información de las transacciones en curso. Este tipo de copias de seguridad son las más sencillas y las más seguras, aunque es necesario apagar la base de datos, cosa que no siempre es posible.
+Tenemos varias formas de replicar una base de datos, en nuestro caso realizaremos una copia en frío. En este tipo de copias de seguridad deberemos volcar todos los registros al disco y una vez hecho esto podremos apagar la base de datos para copiarla y así evitar perder la información de las transacciones en curso. Este tipo de copias de seguridad son las más sencillas y las más seguras, aunque es necesario apagar la base de datos, cosa que no siempre es posible.
 
-![imagen3](https://github.com/FernandoCP/SWAP/blob/master/Práctica5/imagenes/3.png)
-![imagen5](https://github.com/FernandoCP/SWAP/blob/master/Práctica5/imagenes/5.png)
+
+![imagen3](https://github.com/FernandoCP/SWAP/blob/master/Práctica5/imagenes/5.png)
+![imagen5](https://github.com/FernandoCP/SWAP/blob/master/Práctica5/imagenes/7.png)
 
 Antes de recuperar la BDD deberemos crear otra con el mismo nombre en la segunda máquina.
 
 
-![imagen6](https://github.com/FernandoCP/SWAP/blob/master/Práctica5/imagenes/6.png)
+![imagen6](https://github.com/FernandoCP/SWAP/blob/master/Práctica5/imagenes/8.png)
 
 ## 3. Prueba de la granja con alta carga
 
