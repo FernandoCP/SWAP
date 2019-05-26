@@ -47,7 +47,7 @@ Antes de recuperar la BDD deberemos crear otra con el mismo nombre en la segunda
 
 ## 3. Replicación de BD mediante una configuración maestro-esclavo
 
-Modificamos la configuración de MySQL en el maestro y el esclavo de forma que añadiremos las opciones para guardar el log y el bin, y para poder identificar el servidor.
+Modificamos la configuración de MySQL de forma que añadiremos las opciones para guardar el log y el bin, y para poder identificar el servidor.
 
 ![imagen8](https://github.com/FernandoCP/SWAP/blob/master/Práctica5/imagenes/9.png)
 
@@ -61,7 +61,7 @@ Una vez que ya tenemos la máquina 1 como esclavo, establecemos la máquina 2 co
 
 Finalmente, si realizamos un insert en el maestro, al consultar la tabla en el esclavo veremos reflejado el cambio.
 
-![imagen11](https://github.com/FernandoCP/SWAP/blob/master/Práctica5/imagenes/13.png)
+![imagen11](https://github.com/FernandoCP/SWAP/blob/master/Práctica5/imagenes/12.png)
 
 
 
