@@ -6,8 +6,7 @@
 0. ### [Objetivos](#0)
 1. ### [Crear una BD e insertar datos](#1)
 2. ### [Replicar una BD MySQL con mysqldump](#2)
-3. ### [Replicación de BD mediante una configuración
-maestro-esclavo](#3)
+3. ### [Replicación de BD mediante una configuración maestro-esclavo](#3)
 
 <div id='0' />
 
