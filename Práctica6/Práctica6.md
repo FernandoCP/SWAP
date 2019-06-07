@@ -9,14 +9,22 @@
 
 <div id='0' />
 
-### Configurar una máquina como servidor de disco NFS y exportar una carpeta a los clientes.
-Lo primero que haremos en el servidor 1 es instalar los paquetes necesarios con el siguiente comando:
+## 0. Objetivos
+
+En esta práctica el objetivo principal de esta práctica es configurar un servidor NFS para exportar un
+espacio en disco a los servidores finales (que actuarán como clientes-NFS). Para ello vamos a configurar una máquina como servidor de disco NFS y exportar una carpeta a los clientes. Después de esto, montaremos en las máquinas cliente la carpeta exportada por el servidor. Y finalmente, comprobaremos que la información que se escribe en una máquina en dicha carpeta
+se ve actualizada en el resto de máquinas que comparten ese espacio.
+
+<div id='1' />
+
+## 1. Configurar el servidor NFS
+Para empezar instalaremos los paquetes necesarios con este comando:
 
 `sudo apt-get install nfs-kernel-server nfs-common rpcbind`
 
-A continuación, creamos el directorio que compartiremos con los clientes, cambiamos el propietario y añadimos los permisos necesarios.
+Una vez hayamos instalado todo de forma correcta crearemos el directorio que vamos a compartir con los clientes, depsues cambiaremos el propietario y añadiremos todos los permisos.
 
-![Creación de Carpeta](./capturas/directorio-permisos-1.PNG)
+![1](./capturas/directorio-permisos-1.PNG)
 
 Ahora debemos editar el archivo de configuración _/etc/exports_ donde debemos añadir las IPs de las máquinas donde queremos exportar la carpeta.
 
