@@ -3,9 +3,10 @@
 
 ## Índice
 
-0. ### [Objetivos](#0)
-1. ### [Configuración del servidor NFS](#1)
-2. ### [Configuración de los clientes](#2)
+0. ### [Objetivos.](#0)
+1. ### [Configuración del servidor NFS.](#1)
+2. ### [Configuración de los clientes.](#2)
+3. ### [Automatización del proceso y pruebas.](#3)
 
 <div id='0' />
 
@@ -40,39 +41,32 @@ Con esto ya tendriamos configurado del servidor.
 
 ## 2. Configuración de los clientes
 
-### Montar en las máquinas cliente la carpeta exportada por el servidor.
-Una vez configurada la máquina servidora en la máquina 1, configurare las máquinas 1 y 2 como clientes. _Se configuran las cosas paralelamente en ambas máquinas_
-
-A la hora de montar la carpeta exportada, lo primero que debemos hacer es volver a instalar los paquetes necesarios.
+Ahora vamos a configurar ambos clientes, la configuración es exactamente la misma en los 2. Para empezar, lo primero que vamos a hacer es instalar los paquetes necesarios con el siguiente comando:
 
 `sudo apt-get install nfs-common rpcbind`
 
-Después tenemos que crear la carpeta que será nuestro punto de montaje y darle los permisos necesarios.
+Después de que se haya isntaldo todo correctamente procedemos a crear la carpeta que será nuestro punto de montaje y darle los permisos necesarios.
 
-![Creación de Carpeta Cliente](./capturas/directorio-permisos-4.PNG)
+![imagen1](https://github.com/FernandoCP/SWAP/blob/master/Práctica6/imagenes/crea2.png)
 
-Y mediante la siguiente orden traspasamos la carpeta:
+Y con el siguiente comando montaremos la carpeta remota sobre el directorio recién creado:
 
 `sudo mount 192.168.1.100:/dat/compartida carpetacliente`
 
-![Punto de Montaje](./capturas/traspasocarpeta-5.PNG)
+El problema de esto es que cada vez que reiniciemos la máquina cliente tendremos que volver a monta la carpeta remota. Para solucionar esto vamos a hacer una pequeña configuración.
 
-### Comprobar que todas las máquinas pueden acceder a los archivos almacenados en la carpeta compartida.
+<div id='3' />
 
-Y vemos que podemos acceder a los mismos archivos desde ambas carpetas.
+## 3. Automatización del proceso y pruebas.
 
-![Comprobación](./capturas/comprobacion-6.PNG)
-
-### Hacer permanente la configuración en los clientes para que monten automáticamente la carpeta compartida al arrancar el sistema.
-
-Finalmente, para poder hacer la configuración permanente y automatizar el proceso debemos añadir una línea de código al archivo de configuración _/etc/fstab_ para que la carpeta compartida se monte al iniciar el sistema.
+Por último, para automatizar el proceso y evitar tener que montar todo cada vez que reiniciemos unicamente tenemos que añadir una línea al archivo de configuración _/etc/fstab_ para que la carpeta compartida se monte al iniciar el sistema.
 
 `192.168.1.100:/dat/compartida /home/fernandocp/carpetacliente/ nfs auto,noatime,nolock,bg,nfsvers=3,intr,tcp,actimeo=1800 0 0`
 
-![Configuración permanente](./capturas/fstab-7.PNG)
+![imagen1](https://github.com/FernandoCP/SWAP/blob/master/Práctica6/imagenes/ulti.png)
 
-Reiniciamos el sistema que comprobamos que tenemos los mismos archivos en ambas máquinas.
+Finalmente, reiniciamos el sistema para comprobar que todo funciona de forma automatica.
 
-![Todo en funcionamiento](./capturas/funciona-8.PNG)
 
-Y como podemos comprobar todo funciona correctamente.
+![imagen1](https://github.com/FernandoCP/SWAP/blob/master/Práctica6/imagenes/4.png)
+
