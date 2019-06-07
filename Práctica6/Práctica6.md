@@ -33,7 +33,7 @@ Después tenemos que crear la carpeta que será nuestro punto de montaje y darle
 
 Y mediante la siguiente orden traspasamos la carpeta:
 
-`sudo mount 192.168.56.100:/dat/compartida carpetacliente`
+`sudo mount 192.168.1.100:/dat/compartida carpetacliente`
 
 ![Punto de Montaje](./capturas/traspasocarpeta-5.PNG)
 
@@ -47,7 +47,7 @@ Y vemos que podemos acceder a los mismos archivos desde ambas carpetas.
 
 Finalmente, para poder hacer la configuración permanente y automatizar el proceso debemos añadir una línea de código al archivo de configuración _/etc/fstab_ para que la carpeta compartida se monte al iniciar el sistema.
 
-`192.168.56.100:/dat/compartida /home/paula/carpetacliente/ nfs auto,noatime,nolock,bg,nfsvers=3,intr,tcp,actimeo=1800 0 0`
+`192.168.1.100:/dat/compartida /home/fernandocp/carpetacliente/ nfs auto,noatime,nolock,bg,nfsvers=3,intr,tcp,actimeo=1800 0 0`
 
 ![Configuración permanente](./capturas/fstab-7.PNG)
 
