@@ -1,5 +1,5 @@
 ## Practica 6.
-### Servidor de disco NFS - por Paula Ruiz.
+### Servidor de disco NFS - 
 
 ### Configurar una máquina como servidor de disco NFS y exportar una carpeta a los clientes.
 Lo primero que haremos en el servidor 1 es instalar los paquetes necesarios con el siguiente comando:
