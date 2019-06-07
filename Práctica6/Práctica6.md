@@ -4,8 +4,8 @@
 ## Índice
 
 0. ### [Objetivos](#0)
-1. ### [Configurar el servidor NFS](#1)
-2. ### [Configurar los clientes](#2)
+1. ### [Configuración del servidor NFS](#1)
+2. ### [Configuración de los clientes](#2)
 
 <div id='0' />
 
@@ -17,24 +17,28 @@ se ve actualizada en el resto de máquinas que comparten ese espacio.
 
 <div id='1' />
 
-## 1. Configurar el servidor NFS
+## 1. Configuración del servidor NFS
 Para empezar instalaremos los paquetes necesarios con este comando:
 
 `sudo apt-get install nfs-kernel-server nfs-common rpcbind`
 
 Una vez hayamos instalado todo de forma correcta crearemos el directorio que vamos a compartir con los clientes, depsues cambiaremos el propietario y añadiremos todos los permisos.
 
-![1](./capturas/directorio-permisos-1.PNG)
+![imagen1](https://github.com/FernandoCP/SWAP/blob/master/Práctica6/imagenes/crea.png)
 
-Ahora debemos editar el archivo de configuración _/etc/exports_ donde debemos añadir las IPs de las máquinas donde queremos exportar la carpeta.
+Seguidamente editaremos el archivo de configuración _/etc/exports_ donde añadiremos las IPs que haran la función de cliente. 
 
-![Configuración Exports](./capturas/exports-2.PNG)
+![imagen1](https://github.com/FernandoCP/SWAP/blob/master/Práctica6/imagenes/arch.png)
 
-Y finalmente reiniciamos el servicio:
+Y por último reiniciaremos el servicio que el siguiente comando:
 
 `sudo service nfs-kernel-server restart`
 
-![Restart](./capturas/restart-3.PNG)
+Con esto ya tendriamos configurado del servidor.
+
+<div id='2' />
+
+## 2. Configuración de los clientes
 
 ### Montar en las máquinas cliente la carpeta exportada por el servidor.
 Una vez configurada la máquina servidora en la máquina 1, configurare las máquinas 1 y 2 como clientes. _Se configuran las cosas paralelamente en ambas máquinas_
