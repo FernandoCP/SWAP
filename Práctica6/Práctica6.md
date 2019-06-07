@@ -1,5 +1,13 @@
-## Practica 6.
-### Servidor de disco NFS - 
+# Práctica 6: Servidor de disco NFS
+## Fernando Calvillo Parejo
+
+## Índice
+
+0. ### [Objetivos](#0)
+1. ### [Configurar el servidor NFS](#1)
+2. ### [Configurar los clientes](#2)
+
+<div id='0' />
 
 ### Configurar una máquina como servidor de disco NFS y exportar una carpeta a los clientes.
 Lo primero que haremos en el servidor 1 es instalar los paquetes necesarios con el siguiente comando:
